@@ -1,0 +1,34 @@
+- Lesson 13: Beginning the Amazon Project 
+- OVERVIEW: 
+  - HomePage - List of products on a home page. Can click add to cart and will update cart
+  - Cart Page - will show what products in cart & Cost of order (Order Summary)
+  - Order Page - Once create order - will reroute to this page where it'll show your order that you just created + prev orders
+    - Can track package - preparing, shipped, delivered
+  -Goal of the project - to understand how different pages interact with each other
+  - Starting code - will clone from teacher's github starting code which contains all content relating to the HTML/CSS. 
+    - Reason for this is to focus purely on learning javascript
+    - Will follow along as we build the project together
+  - Goal - as we build the project together, will take all learned from the previous course (pt1) and apply into a complex e-commerce website
+  
+- Lesson 14: Modules, organizing code more effectively.
+  -Problem with script tags and running files one at a time with script tags - combining all files together in one big file.
+    - Easy to cause Naming conflicts - JS does not support creating the same variables in different files. 
+  - To solve this problem- use modules. Contains variables inside a file. Won't cause conflicts with anything outside of file.
+  -Temporary solution : remove the script tag containing the variable u want in another file
+  - To create a module - create a file. Don't load the file with a script tag.
+    - Any variables created inside the file will be contained inside the file.
+  - Whats the problem with temporary solution? If u don't load the file with the script tag that contains the variable u need, cart is now undefined...
+  - To get a variable out a file - type="module" attribute. Next, export. Next, import.
+    - 1. Inside the tag of the file using another file's variable. Set type="module"
+    - 2. Next, when initializing that variable in the class you want the variable in, type export infront of it.
+    - 3. Go to the place where u use this variable. use "import {<name>} from 'filepath/name.js'
+      - in faile path, to go outside a folder. use ../go into folder/then file
+  - put all of imports at the top of the file
+  - for modules to work, must use live server
+  - Benefits 
+    - avoid naming conflicts
+      - can use the import and rename it - {'nameOfVariable' as 'newNameInFile'}
+    - We don't have to worry about the order of our files
+      - so in previous example, must load the correct file first before the second file that uses the variable from first file
+    - Entry point is always needed to load website. This file will be the file who's type ="module". This will load all the other files.
+
